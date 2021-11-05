@@ -7,4 +7,7 @@ export interface IConfig {
 
   /** Developer ids of the client */
   developers: string;
+
+  /** Unknown Error Message */
+  unknownErrorMessage: boolean;
 }

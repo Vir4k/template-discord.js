@@ -2,11 +2,13 @@ import { Client, Intents } from "discord.js";
 import { IConfig } from "../../Types/InterfaceConfig";
 import { Logger } from "../../Classes/Logger";
 import Registry from "../../Classes/RegistryEvent";
+import { Formatter } from "../../Utils/Formatter";
 
 export class BotClient extends Client {
   readonly config: IConfig;
   readonly registry: Registry;
   public readonly logger = new Logger();
+  public readonly formatter = new Formatter(this);
   constructor() {
     super({
       intents: [
@@ -24,6 +26,7 @@ export class BotClient extends Client {
       token: process.env.BOT_TOKEN as string,
       prefix: process.env.PREFIX as string,
       developers: process.env.DEVELOPERS as string,
+      unknownErrorMessage: JSON.parse(process.env.UNKNOWN_COMMAND_ERROR as string),
     };
     this.registry = new Registry(this);
     this.registry.registerAll();

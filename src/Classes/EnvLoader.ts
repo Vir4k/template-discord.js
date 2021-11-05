@@ -19,5 +19,6 @@ export default class EnvLoader {
     if (env.TOKEN === "") throw new EnvError("Discord Config token missing.");
     if (env.PREFIX === "") throw new EnvError("Prefix Config missing.");
     if (env.DEVELOPERS === "") throw new EnvError("Developers Config missing.");
+    if (env.UNKNOWN_COMMAND_ERROR === "") throw new EnvError("Unknown command error missing");
   }
 }
