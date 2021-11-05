@@ -27,5 +27,6 @@
     "dotenv": "^10.0.0",
     "moment": "^2.29.1",
     "require-all": "^3.0.0"
-  }
+  },
+  "packageManager": "yarn@3.0.2"
 }
