@@ -12,6 +12,7 @@
     "start:dev": "ts-node-dev -r tsconfig-paths/register ./src/index.ts --respawn --transpile-only --poll ./src/index.ts"
   },
   "devDependencies": {
+    "@types/moment-duration-format": "^2.2.3",
     "@types/require-all": "^3.0.3",
     "rimraf": "^3.0.2",
     "ts-node": "^10.4.0",
@@ -26,6 +27,8 @@
     "discord.js": "^13.3.1",
     "dotenv": "^10.0.0",
     "moment": "^2.29.1",
+    "moment-duration-format": "^2.3.2",
+    "moment-timezone": "^0.5.33",
     "require-all": "^3.0.0"
   },
   "packageManager": "yarn@3.0.2"

@@ -1,6 +1,6 @@
 import { Guild, GuildMember, Message, TextChannel } from "discord.js";
 import { BotClient } from "../Lib/Client/DiscordClient";
-import { isUserDeveloper } from "../Utils/Function";
+import { isUserDeveloper, formatSeconds } from "../Utils/Function";
 
 export default class CommandHandler {
   /**
@@ -114,7 +114,7 @@ export default class CommandHandler {
                 {
                   color: "ORANGE",
                   title: "⏰ Calm Down",
-                  description: `${message.author}, you must wait \`${client.formatter.formatMS(Math.floor(timeLeft))}\` to run this command.`,
+                  description: `${message.author}, you must wait \`${formatSeconds(Math.floor(timeLeft))}\` to run this command.`,
                 },
               ],
             })

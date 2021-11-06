@@ -1,3 +1,7 @@
+import "moment-duration-format";
+
+import moment from "moment-timezone";
+
 import { BotClient } from "../Lib/Client/DiscordClient";
 
 const isConstructorProxyHandler = {
@@ -23,4 +27,25 @@ export function isConstructor(func: any, _class: any) {
  */
 export function isUserDeveloper(client: BotClient, userId: string) {
   return client.config.developers.includes(userId);
+}
+
+/**
+ * Formats seconds and returns as given format.
+ * @param seconds Seconds
+ * @param format Custom format of output (Default: "Y [year] M [month] W [week] D [day] H [hour] m [minute] s [second]")
+ */
+export function formatSeconds(seconds: number, format: string = "Y [year] M [month] W [week] D [day] H [hour] m [minute] s [second]"): string {
+  const str = moment.duration(seconds, "seconds").format(format);
+  const arr = str.split(" ");
+  var newStr = "";
+  arr.forEach((value: any, index: any) => {
+    if (isNaN(parseInt(value))) return;
+    const val = parseInt(value);
+    if (val === 0) return;
+    else {
+      const nextIndex = arr[index + 1];
+      newStr += `${value} ${nextIndex} `;
+    }
+  });
+  return newStr.trim();
 }

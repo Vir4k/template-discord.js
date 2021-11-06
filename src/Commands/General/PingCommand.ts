@@ -13,7 +13,7 @@ export default class PingCommand extends Command {
     });
   }
 
-  async run(message: Message, args: string[], cancelCooldown: () => void) {
+  async run(message: Message, args: string[]) {
     await message.reply({ embeds: [new EmbedBuilder().setDescription(`Pong ${this.client.ws.ping}`)] });
   }
 }

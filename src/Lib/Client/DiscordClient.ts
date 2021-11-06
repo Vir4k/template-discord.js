@@ -2,13 +2,12 @@ import { Client, Intents } from "discord.js";
 import { IConfig } from "../../Types/InterfaceConfig";
 import { Logger } from "../../Classes/Logger";
 import Registry from "../../Classes/RegistryEvent";
-import { Formatter } from "../../Utils/Formatter";
 
 export class BotClient extends Client {
   readonly config: IConfig;
   readonly registry: Registry;
   public readonly logger = new Logger();
-  public readonly formatter = new Formatter(this);
+
   constructor() {
     super({
       intents: [
