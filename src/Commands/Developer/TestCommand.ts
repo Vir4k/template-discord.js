@@ -17,7 +17,6 @@ export default class PingCommand extends Command {
   }
 
   async run(message: Message, args: string[]) {
-    const guildDatabase = await this.client.databases.guilds.set(message.guildId!, "!");
-    await message.reply({ embeds: [new EmbedBuilder().setDescription(`Pong ${this.client.ws.ping} \n ${guildDatabase.prefix}`)] });
+    await message.reply({ embeds: [new EmbedBuilder().setDescription("Test command worked")] });
   }
 }

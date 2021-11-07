@@ -25,10 +25,15 @@ export class GuildDatabaseManager {
     return data;
   }
 
-  public async set(id: Snowflake, prefix: any): Promise<GuildSetting> {
-    const findId = this.repository.create({ id, prefix });
-    if (findId) this.cache.set(id, findId);
-    await this.repository.save(findId);
-    return findId;
+  public async set(id: Snowflake, key: keyof GuildSetting, value: any): Promise<GuildSetting> {
+    const data = (await this.repository.findOne({ id })) ?? this.repository.create({ id });
+    // @ts-ignore
+    data[key] = value;
+    await this.repository.save(data);
+    return data;
+  }
+  public async delete(id: Snowflake) {
+    await this.repository.deleteOne({ id });
+    return this.cache.delete(id);
   }
 }

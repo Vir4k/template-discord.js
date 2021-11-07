@@ -20,7 +20,8 @@ export default class CommandHandler {
           },
         ],
       });
-    const prefix = client.config.prefix;
+    const guildDatabase = await client.databases.guilds.get(message.guildId!);
+    const prefix = guildDatabase.prefix ?? client.config.prefix;
     if (message.content.toLocaleLowerCase().indexOf(prefix) !== 0) return;
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = (args.shift() as string).toLowerCase();
