@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import EnvLoader from "./Classes/EnvLoader";
 EnvLoader.load();
 import { BotClient } from "./Lib/Client/DiscordClient";
