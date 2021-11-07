@@ -1,6 +1,8 @@
 ## [template-discord.js](https://github.com/Xfwm4/template-discord.js)
 
 **This Bot is beta version and In development**
+- Requesting Feature In This [Link](https://github.com/Xfwm4/template-discord.js/issues) 
+
 
 ## Requirements
 
