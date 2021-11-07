@@ -25,7 +25,7 @@ export default abstract class Command {
    * @param error Error message
    */
   async onError(message: Message, error: any) {
-    this.client.logger.error(`Error Command ${this.info.name}`);
+    this.client.logger.error(`Error Command ${this.info.name}\n ${error}`);
     await message.channel.send({
       embeds: [
         {

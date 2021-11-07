@@ -20,5 +20,6 @@ export default class EnvLoader {
     if (env.PREFIX === "") throw new EnvError("Prefix Config missing.");
     if (env.DEVELOPERS === "") throw new EnvError("Developers Config missing.");
     if (env.UNKNOWN_COMMAND_ERROR === "") throw new EnvError("Unknown command error missing");
+    if (env.MONGOURL === "") throw new EnvError("Unknown command error missing");
   }
 }

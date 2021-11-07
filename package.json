@@ -1,6 +1,7 @@
 {
   "name": "template-discord.js",
   "version": "1.0.0",
+  "type": "commonjs",
   "main": "src/index.ts",
   "repository": "https://github.com/Xfwm4/template-discord.js.git",
   "author": "Tudo12 <l|l|12|1#1909>",
@@ -8,13 +9,15 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "yarn clean && tsc -p .",
-    "start": "node dist/index.js",
-    "start:dev": "ts-node-dev -r tsconfig-paths/register ./src/index.ts --respawn --transpile-only --poll ./src/index.ts"
+    "start": "ts-node-dev -r tsconfig-paths/register ./src/index.ts --respawn --transpile-only --poll ./src/index.ts"
   },
   "devDependencies": {
     "@types/moment-duration-format": "^2.2.3",
     "@types/node": "^16.11.6",
     "@types/require-all": "^3.0.3",
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.32.0",
+    "eslint": "^7.32.0",
     "rimraf": "^3.0.2",
     "ts-node": "^10.4.0",
     "ts-node-dev": "^1.1.8",

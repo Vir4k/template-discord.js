@@ -40,16 +40,10 @@ npm -g yarn
 yarn install
 ```
 
-- Running Bot Production/Development
+- Running Bot
 
 ```sh
 yarn start
-```
-
-- Dev production
-
-```sh
-yarn start:dev
 ```
 
 ## Example Commands
