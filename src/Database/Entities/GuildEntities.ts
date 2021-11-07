@@ -10,5 +10,5 @@ export class GuildSetting {
   public id!: Snowflake;
 
   @Column("string")
-  public prefix = "+";
+  public prefix = "?";
 }

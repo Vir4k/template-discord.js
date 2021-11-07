@@ -6,11 +6,16 @@ export class InitDatabase {
   static async Init(client: BotClient) {
     await createConnection({
       database: "Data",
-      entities: ["src/Database/Entities/*.ts", "../../dist/src/Database/Entities/*.js"],
+      entities: ["src/Database/Entities/*.ts", "../dist/src/Database/Entities/*.js"],
+      migrations: ["src/migration/**/*.ts"],
+      cli: {
+        entitiesDir: "src/Database/Entities",
+        migrationsDir: "src/Migration",
+      },
       type: "mongodb",
+      logging: true,
       synchronize: true,
       url: client.config.mongoUrl,
-      useNewUrlParser: true,
       useUnifiedTopology: true,
     })
       .catch((e: Error) => {
