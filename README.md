@@ -93,4 +93,4 @@ export default class ReadyEvent extends Event {
 ```
 
 - Coming Soon to next update Thanks you
-- Have error Dm l|l|12|1#1909
+- Have error Dm [l|l|12|1#1909](https://discord.com/users/776458781239410698)
